@@ -79,6 +79,27 @@
                 </configuration>
             </plugin>
 
+	     <!-- CODE COVERAGE -->
+             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>${cobertura.version}</version>
+                <configuration>
+                    <formats>
+			<format>html</format>
+                        <format>xml</format>
+		     </formats>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+             </plugin>
+
         </plugins>
 
         <pluginManagement>
@@ -174,26 +195,7 @@
             <build>
                 <plugins>
 
-                    <!-- CODE COVERAGE -->
-                    <plugin>
-                        <groupId>org.codehaus.mojo</groupId>
-                        <artifactId>cobertura-maven-plugin</artifactId>
-                        <version>${cobertura.version}</version>
-                        <configuration>
-                            <formats>
-                                <format>html</format>
-                                <format>xml</format>
-                            </formats>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>clean</goal>
-                                    <goal>check</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
+                    
 
                     <!-- CHECKSTYLE -->
                     <plugin>
